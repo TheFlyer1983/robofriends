@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = () => (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
     onRequestRobots: () => {
@@ -30,14 +30,13 @@ function App(props) {
 
   useEffect(() => {
     props.onRequestRobots();
-    console.log(count);
   }, [count]);
 
   const { searchField, onSearchChange, robots, isPending } = props;
   const filteredRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchField.toLowerCase());
   });
-  return isPending.length ? (
+  return isPending ? (
     <h1>Loading</h1>
   ) : (
     <div className="tc">
