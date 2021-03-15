@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loads header properly 1`] = `
+<div>
+  <div>
+    <h1
+      class="f1"
+    >
+      RoboFriends
+    </h1>
+    <button
+      color="red"
+    >
+      Count: 
+      0
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Loads header properly 2`] = `
+<div>
+  <div>
+    <h1
+      class="f1"
+    >
+      RoboFriends
+    </h1>
+    <button
+      color="red"
+    >
+      Count: 
+      0
+    </button>
+  </div>
+</div>
+`;
