@@ -7,8 +7,6 @@ import ErrorBoundry from '../components/ErrorBoundary';
 import './MainPage.css';
 
 function MainPage(props) {
-  const [count, setCount] = useState(0);
-
   useEffect(() => {
     props.onRequestRobots();
   }, []);
