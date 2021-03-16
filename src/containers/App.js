@@ -23,12 +23,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 function App(props) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    props.onRequestRobots();
-  }, []);
-
   return <MainPage { ...props }/>
 }
 
