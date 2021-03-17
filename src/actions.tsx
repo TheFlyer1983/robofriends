@@ -3,15 +3,16 @@ import {
   REQUEST_ROBOTS_PENDING,
   REQUEST_ROBOTS_SUCCESS,
   REQUEST_ROBOTS_FAILED,
-} from './constants.js';
+} from './constants';
 import { apiCall } from './api/api';
+import { useDispatch } from 'react-redux';
 
-export const setSearchField = (text) => ({
+export const setSearchField = (text: string) => ({
   type: CHANGE_SEARCH_FIELD,
   payload: text,
 });
 
-export const requestRobots = () => (dispatch) => {
+export const requestRobots = () => (dispatch = useDispatch()) => {
   dispatch({ type: REQUEST_ROBOTS_PENDING });
   return apiCall('https://jsonplaceholder.typicode.com/users')
     .then((data) => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data }))

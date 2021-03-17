@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundary';
+import Header from './Header';
+import CardList from './CardList';
+import SearchBox from './SearchBox';
+import Scroll from './Scroll';
+import ErrorBoundry from './ErrorBoundary';
 import './MainPage.css';
 
-function MainPage(props) {
+function MainPage(props: any) {
   useEffect(() => {
     props.onRequestRobots();
   }, []);
 
   const { searchField, onSearchChange, robots, isPending } = props;
-  const filteredRobots = robots.filter((robot) =>
+  const filteredRobots = robots.filter((robot: { name: string }) =>
     robot.name.toLowerCase().includes(searchField.toLowerCase())
   );
 

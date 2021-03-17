@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { IAppProps, IErrorState, Props } from '../types/types';
 
-class ErrorBoundry extends Component {
-  constructor(props) {
+class ErrorBoundry extends Component<IAppProps, IErrorState> {
+  constructor(props: IAppProps) {
     super(props);
     this.state = {
       hasError: false,

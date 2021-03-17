@@ -1,6 +1,10 @@
 import React from 'react';
+import { ISearchBoxProps } from '../types/types';
 
-const SearchBox = ({ searchfield, searchChange }) => {
+const SearchBox = ({
+  searchfield,
+  searchChange,
+}: ISearchBoxProps) => {
   return (
     <div className="pa2">
       <input

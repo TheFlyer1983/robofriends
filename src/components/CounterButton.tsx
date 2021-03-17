@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import { IAppProps, ICounterState } from '../types/types';
 
-class CounterButton extends Component {
-  constructor() {
-    super();
+class CounterButton extends Component<IAppProps, ICounterState> {
+  constructor(props: IAppProps) {
+    super(props);
     this.state = {
       count: 0,
     };
   }
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps: IAppProps, nextState: ICounterState) {
     return this.state.count !== nextState.count;
-  };
+  }
 
   updateCount = () => {
     this.setState((state) => {
@@ -17,7 +18,7 @@ class CounterButton extends Component {
     });
   };
 
-  render() {
+  render(): JSX.Element {
     return (
       <button color={this.props.color} onClick={this.updateCount}>
         Count: {this.state.count}

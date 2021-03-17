@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import CounterButton from './CounterButton';
 
 class Header extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate() {
     return false;
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         <h1 className="f1">RoboFriends</h1>
