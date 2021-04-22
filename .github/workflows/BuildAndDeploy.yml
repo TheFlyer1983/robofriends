@@ -19,7 +19,6 @@ jobs:
       - name: npm install, and test
         run: |
           npm ci
-          npm install node-fetch
           npm test
         env:
           CI: true
