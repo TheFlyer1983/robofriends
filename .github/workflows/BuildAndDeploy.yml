@@ -1,7 +1,9 @@
 name: Build and Deploy
 on:
   push:
-    branches: [ main, feature/* ]
+    branches: [ main, feature/*, investigation/* ]
+env:
+  buildNumber: ${{ github.run_id }}-${{ github.run_number }}
 jobs:
   test: 
     runs-on: ubuntu-latest
@@ -10,6 +12,8 @@ jobs:
         os: [ubuntu-latest]
         node-version: [12.x, 14.x]
     steps:
+      - name: Build Number
+        run: echo ${{ env.buildNumber }}
       - name: Checkout
         uses: actions/checkout@v2.3.1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -28,6 +32,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
