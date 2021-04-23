@@ -4,7 +4,7 @@ on:
     branches: [ main, feature/* ]
 env:
   buildNumber: ${{ github.run_id }}-${{ github.run_number }}
-  buildNumber2: $(date +'%Y-%m-%d')
+  buildNumber2: $(date +'%Y%m%d')-${{ gihub.run_number }}
 jobs:
   test: 
     runs-on: ubuntu-latest
@@ -18,8 +18,6 @@ jobs:
         run: |
           echo ${{ env.buildNumber }}
           echo ${{ env.buildNumber2 }}
-          echo "::set-output name=date::$(date +'%Y-%m-%d')"
-          echo ${{ steps.date.outputs.date }}
       - name: Checkout
         uses: actions/checkout@v2.3.1
       - name: Use Node.js ${{ matrix.node-version }}
