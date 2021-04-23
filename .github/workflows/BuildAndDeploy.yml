@@ -4,7 +4,7 @@ on:
     branches: [ main, feature/* ]
 env:
   buildNumber: ${{ github.run_id }}-${{ github.run_number }}
-  buildNumber2: $(date +'%Y%m%d')-${{ gihub.run_number }}
+  buildNumber2: $(date +'%Y%m%d')-${{ github.run_number }}
 jobs:
   test: 
     runs-on: ubuntu-latest
