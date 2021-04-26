@@ -13,6 +13,7 @@ export const setSearchField = (text) => ({
 
 export const requestRobots = () => (dispatch) => {
   dispatch({ type: REQUEST_ROBOTS_PENDING });
+  console.log(process.env.VUE_APP_ROBOT_API)
   return apiCall('https://jsonplaceholder.typicode.com/users')
     .then((data) => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data }))
     .catch((error) => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: error }));
