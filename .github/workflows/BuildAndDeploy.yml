@@ -35,7 +35,7 @@ jobs:
 
       - name: Install and Build 🔧
         env: 
-          VUE_APP_ROBOT_API: ${{ secrets.VUE_APP_ROBOT_API }}
+          REACT_APP_ROBOT_API: ${{ secrets.REACT_APP_ROBOT_API }}
         run: |
           npm install
           npm run build
